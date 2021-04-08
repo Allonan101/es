@@ -14,5 +14,26 @@ namespace Trabalho_1_adriano_wilson
         public string especie { get; set; }
         public int numeroIdentificacao { get; set; }
 
+        public Animal(string nome, int idade, string genero, string especie, int numeroIdentificacao)
+        {
+            this.nome = nome;
+            this.idade = idade;
+            this.genero = genero;
+            this.especie = especie;
+            this.numeroIdentificacao = numeroIdentificacao;
+
+        }
+        public void printAnimais()
+        {
+            Console.WriteLine("\n########################### ");
+            Console.WriteLine("\nInformação sobre o cliente: ");
+            Console.WriteLine("\tNome     : " + nome);
+            Console.WriteLine("\tidade : " + idade);
+            Console.WriteLine("\tgenero : " + genero);
+            Console.WriteLine("\tespecie : " + especie);
+            Console.WriteLine("\tnumero de Identificacao : " + numeroIdentificacao);
+            Console.WriteLine("\n########################### ");
+        }
+
     }
 }
