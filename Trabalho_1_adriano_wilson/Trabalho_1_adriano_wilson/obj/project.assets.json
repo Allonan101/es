@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Segundo Semestre\\Engenharia de Software\\trabalhos\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson.csproj",
       "projectName": "Trabalho_1_adriano_wilson",
-      "projectPath": "C:\\Users\\Asus\\source\\repos\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson.csproj",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\Segundo Semestre\\Engenharia de Software\\trabalhos\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\source\\repos\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\Segundo Semestre\\Engenharia de Software\\trabalhos\\Trabalho_1_adriano_wilson\\Trabalho_1_adriano_wilson\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
