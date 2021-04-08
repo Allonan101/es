@@ -9,8 +9,8 @@ namespace Trabalho_1_adriano_wilson
     class Pessoa
     {
         public string nome { get; set; }
-        private int contacto { get; set; }
-        private string endereco { get; set; }
+        public int contacto { get; set; }
+        public string endereco { get; set; }
         
     }
 }

@@ -8,11 +8,11 @@ namespace Trabalho_1_adriano_wilson
 {
     class Animal
     {
-        private string nome { get; set; }
-        private int idade { get; set; }
-        private string genero { get; set; }
-        private string especie { get; set; }
-        private int numeroIdentificacao { get; set; }
+        public string nome { get; set; }
+        public int idade { get; set; }
+        public string genero { get; set; }
+        public string especie { get; set; }
+        public int numeroIdentificacao { get; set; }
 
     }
 }
