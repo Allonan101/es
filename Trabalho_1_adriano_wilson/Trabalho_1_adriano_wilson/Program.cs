@@ -17,11 +17,13 @@ namespace Trabalho_1_adriano_wilson
                 Console.WriteLine("\nBem vindo a clinica veterinaria");
                 Console.WriteLine("1- Registe um animal");
                 Console.WriteLine("2- Registe um cliente");
-                Console.WriteLine("3- Serviços");
-                Console.WriteLine("4- Mostrar clientes");
-                Console.WriteLine("5- Mostrar animais");
-                Console.WriteLine("6- Fazer o relatório");
-                Console.WriteLine("7- Sair");
+                Console.WriteLine("3- Serviço check-up");
+                Console.WriteLine("4- Serviço exame de sangue");
+                Console.WriteLine("5- Mostrar empregados");
+                Console.WriteLine("6- Mostrar clientes");
+                Console.WriteLine("7- Mostrar animais");
+                Console.WriteLine("8- Fazer o relatório");
+                Console.WriteLine("9- Sair");
                 Console.Write("=>");
 
                 int opcao = Convert.ToInt32(Console.ReadLine());
@@ -61,25 +63,32 @@ namespace Trabalho_1_adriano_wilson
                         Console.WriteLine("Registou um cliente");
                         break;
                     case 3:
-                        Console.WriteLine("Mostra todos os serviços disponiveis");
-                        Console.WriteLine("Mostra depois todos os empregados disponiveis para ajudar");
+                        Servicos checkUp = new Servicos(5, 15, "Nao é preciso nenhum");
+                        checkUp.printServico();
                         break;
                     case 4:
+                        Servicos exameDeSangue = new Servicos(30, 60, "Analgesicos");
+                        exameDeSangue.printServico();
+                        break;
+                    case 5:
+                        Console.WriteLine("Lista de empregados");
+                        break;
+                    case 6:
                         foreach (var cliente in clientes)
                         {
                             cliente.printClientes();
                         }
                         break;
-                    case 5:
+                    case 7:
                         foreach(var animal in animais)
                         {
                             animal.printAnimais();
                         }
                         break;
-                    case 6:
+                    case 8:
                         Console.WriteLine("Faz relatorio sobre todas as informações");
                         break;
-                    case 7:
+                    case 9:
                         repetir = false;
                         break;
                     default:
