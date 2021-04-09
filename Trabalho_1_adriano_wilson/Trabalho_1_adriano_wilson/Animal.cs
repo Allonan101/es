@@ -26,11 +26,11 @@ namespace Trabalho_1_adriano_wilson
         public void printAnimais()
         {
             Console.WriteLine("\n########################### ");
-            Console.WriteLine("\nInformação sobre o cliente: ");
+            Console.WriteLine("\nInformação sobre o animal: ");
             Console.WriteLine("\tNome     : " + nome);
-            Console.WriteLine("\tidade : " + idade);
-            Console.WriteLine("\tgenero : " + genero);
-            Console.WriteLine("\tespecie : " + especie);
+            Console.WriteLine("\tidade    : " + idade);
+            Console.WriteLine("\tgenero   : " + genero);
+            Console.WriteLine("\tespecie  : " + especie);
             Console.WriteLine("\tnumero de Identificacao : " + numeroIdentificacao);
             Console.WriteLine("\n########################### ");
         }
