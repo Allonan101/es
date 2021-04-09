@@ -8,8 +8,7 @@ namespace Trabalho_1_adriano_wilson
         static void Main(string[] args)
         {
             List<Cliente> clientes = new List<Cliente>();
-            List<Animal> animais = new List<Animal>();
-
+           
             bool repetir = true;
             while (repetir == true)
             {
@@ -21,9 +20,8 @@ namespace Trabalho_1_adriano_wilson
                 Console.WriteLine("4- Serviço exame de sangue");
                 Console.WriteLine("5- Mostrar empregados");
                 Console.WriteLine("6- Mostrar clientes");
-                Console.WriteLine("7- Mostrar animais");
-                Console.WriteLine("8- Fazer o relatório");
-                Console.WriteLine("9- Sair");
+                Console.WriteLine("7- Fazer o relatório");
+                Console.WriteLine("8- Sair");
                 Console.Write("=>");
 
                 int opcao = Convert.ToInt32(Console.ReadLine());
@@ -31,23 +29,39 @@ namespace Trabalho_1_adriano_wilson
                 switch (opcao)
                 {
                     case 1:
-                        Console.WriteLine("\nIntruduza o nome do animal de estimação:");
-                        string nomeAnimal = Console.ReadLine();
+                        if (clientes.Count == 0)
+                        {
+                            Console.WriteLine("\nPrecisa de adicionar um cliente primeiro");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nEscolha um cliente para associar o animal:");
+                            int i = 1;
+                            foreach(Cliente cliente in clientes)
+                            {
+                                Console.WriteLine(i+ " " + cliente.nome);
+                                i++;
+                            }
+                            int idCliente = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("\nIntruduza a idade do animal de estimação:");
-                        int idadeAnimal = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\nIntruduza o nome do animal de estimação:");
+                            string nomeAnimal = Console.ReadLine();
 
-                        Console.WriteLine("\nIntruduza o genero do animal de estimação:");
-                        string generoAnimal = Console.ReadLine();
+                            Console.WriteLine("\nIntruduza a idade do animal de estimação:");
+                            int idadeAnimal = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("\nIntruduza o especi do animal de estimação:");
-                        string especiAnimal = Console.ReadLine();
+                            Console.WriteLine("\nIntruduza o genero do animal de estimação:");
+                            string generoAnimal = Console.ReadLine();
 
-                        Console.WriteLine("\nIntruduza o numero de identificação do animal de estimação:");
-                        int numeroIdentificacaoAnimal = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\nIntruduza o especi do animal de estimação:");
+                            string especiAnimal = Console.ReadLine();
 
-                        animais.Add(new Animal(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal, numeroIdentificacaoAnimal));
-                        Console.WriteLine("Registou um animal");
+                            Console.WriteLine("\nIntruduza o numero de identificação do animal de estimação:");
+                            int numeroIdentificacaoAnimal = Convert.ToInt32(Console.ReadLine());
+
+                            clientes[idCliente - 1].adicionaAnimalAoCliente(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal, numeroIdentificacaoAnimal);
+                            Console.WriteLine("\nRegistou um animal");
+                        }
                         break;
                     case 2:
                         Console.WriteLine("\nIntruduza o nome:");
@@ -60,7 +74,7 @@ namespace Trabalho_1_adriano_wilson
                         string enderecoCliente = Console.ReadLine();
 
                         clientes.Add(new Cliente(nomeCliente, contactoCliente, enderecoCliente));
-                        Console.WriteLine("Registou um cliente");
+                        Console.WriteLine("\nRegistou um cliente");
                         break;
                     case 3:
                         Servicos checkUp = new Servicos(5, 15, "Nao é preciso nenhum");
@@ -80,15 +94,9 @@ namespace Trabalho_1_adriano_wilson
                         }
                         break;
                     case 7:
-                        foreach(var animal in animais)
-                        {
-                            animal.printAnimais();
-                        }
-                        break;
-                    case 8:
                         Console.WriteLine("Faz relatorio sobre todas as informações");
                         break;
-                    case 9:
+                    case 8:
                         repetir = false;
                         break;
                     default:
