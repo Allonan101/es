@@ -5,26 +5,45 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Trabalho_1_adriano_wilson
-{
+{   
     class Servicos
-    {
-        public Servicos(double preco, double duracao, string medicamentos)
+    {   
+        List<String> Medicamentos = new List<String>();
+
+        public Servicos(int id, string nome, double preco, double duracao, string medicamentos)
         {
+            this.id = id;
+            this.nome = nome;
             this.preco = preco;
             this.duracao = duracao;
-            this.medicamentos = medicamentos;
+
+            //Adiciona medicamentos separado por virgulas
+            string[] words = medicamentos.Split(',');
+
+            foreach (var word in words)
+            {
+                this.Medicamentos.Add(word);
+            }
         }
+        public int id { get; set; }
+        public string nome { get; set; }
         public double preco { get; set; }
         public double duracao { get; set; }
-        public string medicamentos { get; set; }
 
         public void printServico()
         {
             Console.WriteLine("\n########################### ");
-            Console.WriteLine("\nInformação sobre este serviço: ");
-            Console.WriteLine("\tPreco        : " + preco + " Euros");
-            Console.WriteLine("\tduracao      : " + duracao + " minutos");
-            Console.WriteLine("\tmedicamentos : " + medicamentos);
+            Console.WriteLine("\nInformação sobre os serviços: ");
+            Console.WriteLine("\tID           : " + id);
+            Console.WriteLine("\tnome         : " + nome);
+            Console.WriteLine("\tPreco        : " + preco + " euros");
+            Console.WriteLine("\tDuracao      : " + duracao + " minutos");
+            Console.WriteLine("\tMedicamentos:");
+            foreach (var Medicamento in Medicamentos)
+            {
+                Console.WriteLine("\t\t" + Medicamento + "\n");
+            }
+
             Console.WriteLine("\n########################### ");
         }
     }

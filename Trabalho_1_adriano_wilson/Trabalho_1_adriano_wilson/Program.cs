@@ -8,20 +8,17 @@ namespace Trabalho_1_adriano_wilson
         static void Main(string[] args)
         {
             List<Cliente> clientes = new List<Cliente>();
-           
             bool repetir = true;
             while (repetir == true)
             {
-                
                 Console.WriteLine("\nBem vindo a clinica veterinaria");
                 Console.WriteLine("1- Registe um animal");
                 Console.WriteLine("2- Registe um cliente");
-                Console.WriteLine("3- Serviço check-up");
-                Console.WriteLine("4- Serviço exame de sangue");
-                Console.WriteLine("5- Mostrar empregados");
-                Console.WriteLine("6- Mostrar clientes");
-                Console.WriteLine("7- Fazer o relatório");
-                Console.WriteLine("8- Sair");
+                Console.WriteLine("3- Realizar um Serviço");
+                Console.WriteLine("4- Mostrar empregados");
+                Console.WriteLine("5- Mostrar clientes");
+                Console.WriteLine("6- Fazer o relatório");
+                Console.WriteLine("7- Sair");
                 Console.Write("=>");
 
                 int opcao = Convert.ToInt32(Console.ReadLine());
@@ -36,12 +33,12 @@ namespace Trabalho_1_adriano_wilson
                         else
                         {
                             Console.WriteLine("\nEscolha um cliente para associar o animal:");
-                            int i = 1;
-                            foreach(Cliente cliente in clientes)
+                            
+                            foreach (Cliente cliente in clientes)
                             {
-                                Console.WriteLine(i+ " " + cliente.nome);
-                                i++;
+                                Console.WriteLine(cliente.id + " " + cliente.nome);
                             }
+
                             int idCliente = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine("\nIntruduza o nome do animal de estimação:");
@@ -53,13 +50,20 @@ namespace Trabalho_1_adriano_wilson
                             Console.WriteLine("\nIntruduza o genero do animal de estimação:");
                             string generoAnimal = Console.ReadLine();
 
-                            Console.WriteLine("\nIntruduza o especi do animal de estimação:");
+                            Console.WriteLine("\nIntruduza o especie do animal de estimação:");
                             string especiAnimal = Console.ReadLine();
 
                             Console.WriteLine("\nIntruduza o numero de identificação do animal de estimação:");
                             int numeroIdentificacaoAnimal = Convert.ToInt32(Console.ReadLine());
 
-                            clientes[idCliente - 1].adicionaAnimalAoCliente(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal, numeroIdentificacaoAnimal);
+                            foreach (Cliente cliente in clientes)
+                            {
+                                if (cliente.id == idCliente)
+                                {
+                                    cliente.adicionaAnimalAoCliente(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal, numeroIdentificacaoAnimal);
+                                }
+                            }
+                            
                             Console.WriteLine("\nRegistou um animal");
                         }
                         break;
@@ -77,32 +81,52 @@ namespace Trabalho_1_adriano_wilson
                         Console.WriteLine("\nRegistou um cliente");
                         break;
                     case 3:
-                        Servicos checkUp = new Servicos(5, 15, "Nao é preciso nenhum");
+                        //Lista de serviços
+                        Servicos checkUp = new Servicos(1, "checkup", 5, 15, "Nao, é, preciso, nenhum");
+                        Servicos exameDeSangue = new Servicos(2,"Exame de sangue", 30, 60, "Analgesicos");
+
+                        Console.WriteLine("\nSelecione um servico");
                         checkUp.printServico();
+                        exameDeSangue.printServico();
+                        string servicoEscolhido = Console.ReadLine();
+
+                        Console.WriteLine("\nEscolha o id do cliente:");
+
+                        //registar um id para cada cliente
+                        foreach (Cliente cliente in clientes)
+                        {
+                            Console.WriteLine(cliente.id + " " + cliente.nome);
+                        }
+                        int idCliente2 = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("\nEscolha o id do animal:");
+                        foreach (Cliente cliente in clientes)
+                        {
+                            if (cliente.id == idCliente2)
+                            {
+                                cliente.printAnimals();
+                            }
+                        }
+                        int idAnimal = Convert.ToInt32(Console.ReadLine());
                         break;
                     case 4:
-                        Servicos exameDeSangue = new Servicos(30, 60, "Analgesicos");
-                        exameDeSangue.printServico();
-                        break;
-                    case 5:
                         Console.WriteLine("Lista de empregados");
                         break;
-                    case 6:
+                    case 5:
                         foreach (var cliente in clientes)
                         {
-                            cliente.printClientes();
+                            cliente.printClientesEAnimais();
                         }
                         break;
-                    case 7:
+                    case 6:
                         Console.WriteLine("Faz relatorio sobre todas as informações");
                         break;
-                    case 8:
+                    case 7:
                         repetir = false;
                         break;
                     default:
-                        Console.WriteLine("default case");
+                        Console.WriteLine("Escolha uma opção correta");
                         break;
-
                 }
             }
         }

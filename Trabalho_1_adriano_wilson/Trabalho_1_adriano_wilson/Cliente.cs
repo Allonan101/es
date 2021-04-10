@@ -14,33 +14,42 @@ namespace Trabalho_1_adriano_wilson
             this.nome = nome;
             this.contacto = contacto;
             this.endereco = endereco;
-
+            this.id = geraId();
         }
-        
+
+        public int id { get; set; }
+
         public void adicionaAnimalAoCliente(string nomeAnimal, int idadeAnimal, string generoAnimal, string especiAnimal, int numeroIdentificacaoAnimal)
         {
             animais.Add(new Animal(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal, numeroIdentificacaoAnimal));
         }
-        public void printClientes()
+        public void printClientesEAnimais()
         {
             Console.WriteLine("\n########################### ");
             Console.WriteLine("\nInformação sobre o cliente: ");
             Console.WriteLine("\tNome     : " + nome);
             Console.WriteLine("\tContacto : " + contacto);
             Console.WriteLine("\tEndereço : " + endereco);
-            foreach(Animal animal in animais)
+            foreach (Animal animal in animais)
             {
-                
-                Console.WriteLine("\nInformação sobre o animal: ");
-                Console.WriteLine("\tNome     : " + animal.nome);
-                Console.WriteLine("\tidade    : " + animal.idade);
-                Console.WriteLine("\tgenero   : " + animal.genero);
-                Console.WriteLine("\tespecie  : " + animal.especie);
-                Console.WriteLine("\tnumero de Identificacao : " + animal.numeroIdentificacao);
-                
+                animal.printAnimais();
             }
             Console.WriteLine("\n########################### ");
+        }
+        public void printAnimals()
+        {
+            foreach (Animal animal in animais)
+            {
+                Console.WriteLine("ID : " + animal.numeroIdentificacao + "Nome : " + animal.nome);
+                
+            }
+        }
 
+        public int geraId()
+        {
+            Random rand = new Random();
+            int id = rand.Next(1,300);
+            return id;
         }
        
     }

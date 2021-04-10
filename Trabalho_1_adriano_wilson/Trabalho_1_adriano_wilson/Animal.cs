@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Trabalho_1_adriano_wilson
 {
+    
     class Animal
     {
+        List<Servicos> servicos = new List<Servicos>();
+
         public string nome { get; set; }
         public int idade { get; set; }
         public string genero { get; set; }
@@ -23,16 +26,25 @@ namespace Trabalho_1_adriano_wilson
             this.numeroIdentificacao = numeroIdentificacao;
 
         }
+
         public void printAnimais()
         {
-            Console.WriteLine("\n########################### ");
             Console.WriteLine("\nInformação sobre o animal: ");
             Console.WriteLine("\tNome     : " + nome);
             Console.WriteLine("\tidade    : " + idade);
             Console.WriteLine("\tgenero   : " + genero);
             Console.WriteLine("\tespecie  : " + especie);
             Console.WriteLine("\tnumero de Identificacao : " + numeroIdentificacao);
-            Console.WriteLine("\n########################### ");
+        }
+
+        public void printServicos()
+        {
+            foreach(Servicos servico in servicos)
+            {
+
+                servico.printServico();
+
+            }
         }
 
     }
