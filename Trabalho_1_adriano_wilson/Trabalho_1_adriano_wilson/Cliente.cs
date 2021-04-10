@@ -18,15 +18,13 @@ namespace Trabalho_1_adriano_wilson
             this.id = geraId();
         }
 
-        public int id { get; set; }
-
         public void adicionaAnimalAoCliente(string nomeAnimal, int idadeAnimal, string generoAnimal, string especiAnimal, int numeroIdentificacaoAnimal)
         {
             animais.Add(new Animal(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal, numeroIdentificacaoAnimal));
         }
         public void printClientesEAnimais()
         {
-            Console.WriteLine("\n########################### ");
+
             Console.WriteLine("\nInformação sobre o cliente: ");
             Console.WriteLine("\tNome     : " + nome);
             Console.WriteLine("\tContacto : " + contacto);
@@ -36,13 +34,13 @@ namespace Trabalho_1_adriano_wilson
                 animal.printAnimais();
                 animal.printServicos();
             }
-            Console.WriteLine("\n########################### ");
+
         }
         public void printAnimals()
         {
             foreach (Animal animal in animais)
             {
-                Console.WriteLine("ID : " + animal.numeroIdentificacao + " Nome : " + animal.nome);
+                Console.WriteLine("\nID : " + animal.numeroIdentificacao + "\nNome : " + animal.nome);
                 
             }
         }

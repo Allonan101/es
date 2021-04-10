@@ -11,29 +11,31 @@ namespace Trabalho_1_adriano_wilson
         public string horario { get; set; }
         public int turno { get; set; }
 
-        public Empregado(string nome,int contacto, string horario, int turno)
+        public Empregado(int id, string nome,int contacto, string horario, int turno)
         {
+            this.id = id;
             this.nome = nome;
             this.contacto = contacto;
             this.horario = horario;
             this.turno = turno;
         }
-        public void printDisponibilidade()
+        public void printEmpregado()
         {
-            Console.WriteLine("Turno:\n");
-            if (turno == 0) 
+            Console.WriteLine("\nInformacao sobre os Empregados:");
+            Console.WriteLine("\tID: " + id);
+            Console.WriteLine("\tNome:" + nome);
+            Console.WriteLine("\tContacto:" + contacto);
+            Console.Write("\tTurno:");
+            if (turno == 0)
             {
-                Console.WriteLine("\tDiurno\n");
-                Console.WriteLine("\tHorario:"  + horario + "\n");
-
+                Console.WriteLine("\tDiurno");
             }
             else
             {
-                Console.WriteLine("\tNoturno\n");
-                Console.WriteLine("\tHorario:" + horario + "\n");
+                Console.WriteLine("\tNoturno");
             }
+            Console.WriteLine("\tHorario:" + horario + "\n");
         }
-
 
     }
 }

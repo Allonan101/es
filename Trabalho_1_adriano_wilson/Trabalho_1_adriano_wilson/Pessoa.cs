@@ -8,6 +8,7 @@ namespace Trabalho_1_adriano_wilson
 {
     class Pessoa
     {
+        public int id { get; set; }
         public string nome { get; set; }
         public int contacto { get; set; }
         public string endereco { get; set; }

@@ -11,7 +11,6 @@ namespace Trabalho_1_adriano_wilson
         List<String> Medicamentos = new List<String>();
         List<Empregado> Empregados = new List<Empregado>();
 
-
         public Servicos(int id, string nome, double preco, double duracao, string medicamentos)
         {
             this.id = id;
@@ -32,9 +31,11 @@ namespace Trabalho_1_adriano_wilson
         public double preco { get; set; }
         public double duracao { get; set; }
 
+        public int frequencia { get; set; }
+
         public void printServico()
         {
-            Console.WriteLine("\n########################### ");
+
             Console.WriteLine("\nInformação sobre os serviços: ");
             Console.WriteLine("\tID           : " + id);
             Console.WriteLine("\tnome         : " + nome);
@@ -43,10 +44,18 @@ namespace Trabalho_1_adriano_wilson
             Console.Write("\tMedicamentos :");
             foreach (var Medicamento in Medicamentos)
             {
-                Console.Write(" " + Medicamento + ", ");
+                Console.Write(" " + Medicamento + ",");
             }
-
-            Console.WriteLine("\n########################### ");
+            Console.Write("\n");
+            foreach (var empregado in Empregados)
+            {
+                empregado.printEmpregado();
+            }
+  
+        }
+        public void adicionaEmpregadoAServico(Empregado empregado)
+        {
+            Empregados.Add(empregado);
         }
     }
 }
