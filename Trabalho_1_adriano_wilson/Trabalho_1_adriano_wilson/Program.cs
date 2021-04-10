@@ -32,11 +32,11 @@ namespace Trabalho_1_adriano_wilson
                         }
                         else
                         {
-                            Console.WriteLine("\nEscolha um cliente para associar o animal:");
+                            Console.WriteLine("\nEscolha o ID de um cliente para associar o animal:");
                             
                             foreach (Cliente cliente in clientes)
                             {
-                                Console.WriteLine(cliente.id + " " + cliente.nome);
+                                Console.WriteLine("ID: " + cliente.id + " Nome: " + cliente.nome);
                             }
 
                             int idCliente = Convert.ToInt32(Console.ReadLine());

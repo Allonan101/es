@@ -40,7 +40,7 @@ namespace Trabalho_1_adriano_wilson
         {
             foreach (Animal animal in animais)
             {
-                Console.WriteLine("ID : " + animal.numeroIdentificacao + "Nome : " + animal.nome);
+                Console.WriteLine("ID : " + animal.numeroIdentificacao + " Nome : " + animal.nome);
                 
             }
         }

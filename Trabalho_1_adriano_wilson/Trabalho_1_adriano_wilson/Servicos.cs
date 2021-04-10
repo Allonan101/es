@@ -38,10 +38,10 @@ namespace Trabalho_1_adriano_wilson
             Console.WriteLine("\tnome         : " + nome);
             Console.WriteLine("\tPreco        : " + preco + " euros");
             Console.WriteLine("\tDuracao      : " + duracao + " minutos");
-            Console.WriteLine("\tMedicamentos:");
+            Console.Write("\tMedicamentos :");
             foreach (var Medicamento in Medicamentos)
             {
-                Console.WriteLine("\t\t" + Medicamento + "\n");
+                Console.Write(" " + Medicamento + ", ");
             }
 
             Console.WriteLine("\n########################### ");
