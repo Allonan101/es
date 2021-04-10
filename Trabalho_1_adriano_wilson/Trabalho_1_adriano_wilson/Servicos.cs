@@ -9,6 +9,8 @@ namespace Trabalho_1_adriano_wilson
     class Servicos
     {   
         List<String> Medicamentos = new List<String>();
+        List<Empregado> Empregados = new List<Empregado>();
+
 
         public Servicos(int id, string nome, double preco, double duracao, string medicamentos)
         {

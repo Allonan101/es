@@ -9,7 +9,7 @@ namespace Trabalho_1_adriano_wilson
     
     class Animal
     {
-        List<Servicos> servicos = new List<Servicos>();
+        public List<Servicos> servicos = new List<Servicos>();
 
         public string nome { get; set; }
         public int idade { get; set; }
@@ -37,14 +37,24 @@ namespace Trabalho_1_adriano_wilson
             Console.WriteLine("\tnumero de Identificacao : " + numeroIdentificacao);
         }
 
+        public void adicionaServicoAoAnimal(Servicos servico)
+        {
+            servicos.Add(servico);
+
+        }
         public void printServicos()
         {
-            foreach(Servicos servico in servicos)
+            foreach (Servicos servico in servicos)
             {
 
                 servico.printServico();
 
             }
+        }
+
+        public List<Servicos> GetList()
+        {
+            return servicos;
         }
 
     }

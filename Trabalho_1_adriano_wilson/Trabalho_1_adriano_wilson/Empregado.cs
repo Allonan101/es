@@ -11,8 +11,10 @@ namespace Trabalho_1_adriano_wilson
         public string horario { get; set; }
         public int turno { get; set; }
 
-        public Empregado(string horario, int turno)
+        public Empregado(string nome,int contacto, string horario, int turno)
         {
+            this.nome = nome;
+            this.contacto = contacto;
             this.horario = horario;
             this.turno = turno;
         }

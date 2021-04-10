@@ -8,6 +8,20 @@ namespace Trabalho_1_adriano_wilson
         static void Main(string[] args)
         {
             List<Cliente> clientes = new List<Cliente>();
+
+            //Lista de Empregados
+            Empregado Alberto = new Empregado("Adalberto",956689781,"8:00 até 16:00", 0);
+            Empregado Luisa = new Empregado("Luisa", 91868686, "9:00 até 17:00", 0);
+            Empregado Wilson = new Empregado("Wilson", 986698666, "17:00 até 8:00", 1);
+            Empregado Ricardo = new Empregado("Ricardo", 989898989,"19:00 até 9:00", 1);
+
+
+            //Lista de serviços
+            Servicos checkUp = new Servicos(1, "checkup", 5, 15, "Nenhum");
+            Servicos exameDeSangue = new Servicos(2, "Exame de sangue", 30, 60, "Amitriptilina, Citalopram , Escitalopram");
+            Servicos coproparasitologico = new Servicos(3, "Exame coproparasitologico", 15, 30, "Amitriptilina, Citalopram , Escitalopram");
+            Servicos Eletrocardiograma = new Servicos(4, "Exame eletrocardiograma", 30, 60, "Amitriptilina, Citalopram , Escitalopram");
+
             bool repetir = true;
             while (repetir == true)
             {
@@ -80,15 +94,14 @@ namespace Trabalho_1_adriano_wilson
                         clientes.Add(new Cliente(nomeCliente, contactoCliente, enderecoCliente));
                         Console.WriteLine("\nRegistou um cliente");
                         break;
-                    case 3:
-                        //Lista de serviços
-                        Servicos checkUp = new Servicos(1, "checkup", 5, 15, "Nao, é, preciso, nenhum");
-                        Servicos exameDeSangue = new Servicos(2,"Exame de sangue", 30, 60, "Analgesicos");
 
+                    case 3:
+                        
                         Console.WriteLine("\nSelecione um servico");
                         checkUp.printServico();
                         exameDeSangue.printServico();
-                        string servicoEscolhido = Console.ReadLine();
+                        int servicoEscolhido = Convert.ToInt32(Console.ReadLine());
+
 
                         Console.WriteLine("\nEscolha o id do cliente:");
 
@@ -97,17 +110,52 @@ namespace Trabalho_1_adriano_wilson
                         {
                             Console.WriteLine(cliente.id + " " + cliente.nome);
                         }
-                        int idCliente2 = Convert.ToInt32(Console.ReadLine());
+                        int idClienteEscolhido = Convert.ToInt32(Console.ReadLine());
+
+
 
                         Console.WriteLine("\nEscolha o id do animal:");
                         foreach (Cliente cliente in clientes)
                         {
-                            if (cliente.id == idCliente2)
+                            if (cliente.id == idClienteEscolhido)
                             {
                                 cliente.printAnimals();
                             }
                         }
                         int idAnimal = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("\nEscolha um profissional de saude:");
+                        int idProfissional = Convert.ToInt32(Console.ReadLine());
+
+                        //foreach (Consulta consulta in Con)
+                        //{
+                        //    if (cliente.id == idClienteEscolhido)
+                        //    {
+                        //        cliente.printAnimals();
+                        //    }
+                        //}
+
+                        //this is scuffed :-)
+
+                        foreach (Cliente cliente in clientes)
+                        {
+                            foreach(Animal animal in cliente.animais)
+                            {
+                                if  (animal.numeroIdentificacao == idAnimal)
+                                {
+                                    if(checkUp.id == servicoEscolhido)
+                                    {
+                                        animal.adicionaServicoAoAnimal(checkUp);
+                                    }
+                                    else
+                                    {
+                                        animal.adicionaServicoAoAnimal(exameDeSangue);
+                                    }
+                                    
+                                }
+                            }
+                    
+                        }
                         break;
                     case 4:
                         Console.WriteLine("Lista de empregados");

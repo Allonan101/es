@@ -8,7 +8,8 @@ namespace Trabalho_1_adriano_wilson
 {
     class Cliente : Pessoa
     {
-        List<Animal> animais = new List<Animal>();
+        public List<Animal> animais = new List<Animal>();
+        
         public Cliente(string nome, int contacto, string endereco)
         {
             this.nome = nome;
@@ -33,6 +34,7 @@ namespace Trabalho_1_adriano_wilson
             foreach (Animal animal in animais)
             {
                 animal.printAnimais();
+                animal.printServicos();
             }
             Console.WriteLine("\n########################### ");
         }
@@ -51,6 +53,7 @@ namespace Trabalho_1_adriano_wilson
             int id = rand.Next(1,300);
             return id;
         }
-       
+
+        
     }
 }
