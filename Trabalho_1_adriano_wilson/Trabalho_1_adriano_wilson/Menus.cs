@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_1_adriano_wilson
 {
-    class Menus
+    public class Menus
     {
         public static void Caso1(List<Cliente> clientes)
         {

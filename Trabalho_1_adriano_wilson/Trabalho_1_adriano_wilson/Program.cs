@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Trabalho_1_adriano_wilson
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

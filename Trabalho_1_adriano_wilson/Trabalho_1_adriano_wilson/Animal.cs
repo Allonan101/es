@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Trabalho_1_adriano_wilson
 {
     
-    class Animal
+    public class Animal
     {
         public List<Servicos> servicos = new List<Servicos>();
 
@@ -47,9 +47,7 @@ namespace Trabalho_1_adriano_wilson
         {
             foreach (Servicos servico in servicos)
             {
-
                 servico.printEmpregadosAssociadosServicos();
-
             }
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_1_adriano_wilson
 {
-    class Pessoa
+    public class Pessoa
     {
         public int id { get; set; }
         public string nome { get; set; }

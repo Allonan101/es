@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_1_adriano_wilson
 {
-    class Cliente : Pessoa
+    public class Cliente : Pessoa
     {
         public List<Animal> animais = new List<Animal>();
         
@@ -22,6 +22,7 @@ namespace Trabalho_1_adriano_wilson
         {
             animais.Add(new Animal(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal));
         }
+
         public void printClientesEAnimais()
         {
             Console.WriteLine("\n################################## ");

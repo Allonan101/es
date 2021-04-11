@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_1_adriano_wilson
 {   
-    class Empregado : Pessoa
+    public class Empregado : Pessoa
     {
         public string horario { get; set; }
         public int turno { get; set; }

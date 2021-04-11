@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_1_adriano_wilson
 {
-    class Gerar
+    public class Gerar
     {
         public static int geraId()
         {
