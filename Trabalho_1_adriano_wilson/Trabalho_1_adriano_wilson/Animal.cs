@@ -17,13 +17,13 @@ namespace Trabalho_1_adriano_wilson
         public string especie { get; set; }
         public int numeroIdentificacao { get; set; }
 
-        public Animal(string nome, int idade, string genero, string especie, int numeroIdentificacao)
+        public Animal(string nome, int idade, string genero, string especie)
         {
             this.nome = nome;
             this.idade = idade;
             this.genero = genero;
             this.especie = especie;
-            this.numeroIdentificacao = numeroIdentificacao;
+            this.numeroIdentificacao = Gerar.geraId();
 
         }
 
@@ -40,14 +40,15 @@ namespace Trabalho_1_adriano_wilson
         public void adicionaServicoAoAnimal(Servicos servico)
         {
             servicos.Add(servico);
+            servico.frequencia++;
 
         }
-        public void printServicos()
+        public void printServicoseEmpregadosAssociadosAoAnimal()
         {
             foreach (Servicos servico in servicos)
             {
 
-                servico.printServico();
+                servico.printEmpregadosAssociadosServicos();
 
             }
         }

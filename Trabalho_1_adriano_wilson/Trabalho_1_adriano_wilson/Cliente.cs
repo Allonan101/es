@@ -15,16 +15,16 @@ namespace Trabalho_1_adriano_wilson
             this.nome = nome;
             this.contacto = contacto;
             this.endereco = endereco;
-            this.id = geraId();
+            this.id = Gerar.geraId();
         }
 
-        public void adicionaAnimalAoCliente(string nomeAnimal, int idadeAnimal, string generoAnimal, string especiAnimal, int numeroIdentificacaoAnimal)
+        public void adicionaAnimalAoCliente(string nomeAnimal, int idadeAnimal, string generoAnimal, string especiAnimal)
         {
-            animais.Add(new Animal(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal, numeroIdentificacaoAnimal));
+            animais.Add(new Animal(nomeAnimal, idadeAnimal, generoAnimal, especiAnimal));
         }
         public void printClientesEAnimais()
         {
-
+            Console.WriteLine("\n################################## ");
             Console.WriteLine("\nInformação sobre o cliente: ");
             Console.WriteLine("\tNome     : " + nome);
             Console.WriteLine("\tContacto : " + contacto);
@@ -32,7 +32,7 @@ namespace Trabalho_1_adriano_wilson
             foreach (Animal animal in animais)
             {
                 animal.printAnimais();
-                animal.printServicos();
+                animal.printServicoseEmpregadosAssociadosAoAnimal();
             }
 
         }
@@ -41,17 +41,22 @@ namespace Trabalho_1_adriano_wilson
             foreach (Animal animal in animais)
             {
                 Console.WriteLine("\nID : " + animal.numeroIdentificacao + "\nNome : " + animal.nome);
-                
+
+            }
+            
+        }
+
+        public bool temAnimal()
+        {
+            if (animais.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
-
-        public int geraId()
-        {
-            Random rand = new Random();
-            int id = rand.Next(1,300);
-            return id;
-        }
-
         
     }
 }
