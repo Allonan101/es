@@ -11,7 +11,7 @@ namespace Trabalho_1_adriano_wilson
         public static int geraId()
         {
             Random rand = new Random();
-            int id = rand.Next(1, 300);
+            int id = rand.Next(1, 999);
             return id;
         }
         public static void GerarEmpregados(List<Empregado> listaEmpregados)
